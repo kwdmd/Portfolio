@@ -124,31 +124,6 @@
       window.scrollTo({top: 0, left: 0, behavior: scrollBehavior()});
     };
 
-    // Replace these templates with the final resume/cover-letter files when ready.
-    const downloads = {
-      resume: {
-        name: 'resume-template.txt',
-        text: '이력서 작성 양식\n\n이름: \n연락처: \n소개: \n기술 역량: \n경력 및 프로젝트: \n학력: '
-      },
-      cover: {
-        name: 'cover-letter-template.txt',
-        text: '자기소개서 작성 양식\n\n이름: \n지원 동기: \n핵심 역량: \n프로젝트 및 문제 해결 경험: \n입사 후 기여: '
-      }
-    };
-
-    document.querySelectorAll('[data-download]').forEach(link => {
-      link.onclick = event => {
-        event.preventDefault();
-        const file = downloads[link.dataset.download];
-        const url = URL.createObjectURL(new Blob([file.text], {type: 'text/plain;charset=utf-8'}));
-        const anchor = document.createElement('a');
-        anchor.href = url;
-        anchor.download = file.name;
-        anchor.click();
-        setTimeout(() => URL.revokeObjectURL(url), 2000);
-      };
-    });
-
     window.addEventListener('scroll', scheduleMenuUpdate, {passive: true});
     window.addEventListener('resize', scheduleMenuUpdate);
     window.addEventListener('hashchange', route);
