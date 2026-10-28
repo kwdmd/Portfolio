@@ -5,10 +5,26 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="theme-color" content="#F7F7F2">
     <title>이재범 · Frontend Portfolio</title>
-    <link rel="stylesheet" href="styles.css?v=cleanup-1">
-    <script src="script.js?v=cleanup-1"></script>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css"
+      crossorigin
+    >
+    <link rel="stylesheet" href="styles.css?v=project-hover-clean-1">
+    <script src="script.js?v=project-hover-clean-1"></script>
   </head>
   <body>
+    <div class="cube-background" aria-hidden="true">
+      <svg viewBox="0 0 240 280" fill="none" focusable="false">
+        <path d="M120 10L233 75L120 140L7 75Z" fill="#5577FF"/>
+        <path d="M7 75L120 140V270L7 205Z" fill="#345CFF"/>
+        <path d="M120 140L233 75V205L120 270Z" fill="#2346D9"/>
+      </svg>
+    </div>
+    <div id="cube-opening" aria-hidden="true">
+      <canvas></canvas>
+    </div>
     <header>
       <div class="wrap">
         <a class="brand" href="#intro">Portfolio<span class="brand-dot" aria-hidden="true">.</span></a>
@@ -23,27 +39,32 @@
     <main id="home" class="wrap">
       <section id="intro" class="intro-section">
         <div class="hero">
-          <div class="hero-art" aria-hidden="true">
-            <div class="orbit orbit-one"></div>
-            <div class="orbit orbit-two"></div>
-            <div class="orbit orbit-three"></div>
-            <div class="orbit-core"></div>
-            <div class="orbit-axis"></div>
-          </div>
           <div class="eyebrow">FRONTEND DEVELOPER PORTFOLIO</div>
-          <h1>Explore Technology.<br><span class="hero-result">Deliver Results.</span></h1>
+          <div class="slogan-scene">
+            <h1>Explore Technology.<br><span class="hero-result">Deliver Results.</span></h1>
+            <svg class="slogan-paths" viewBox="0 0 800 70" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+              <path d="M5 8H150L200 35H400L440 60H790"/>
+              <path d="M5 35H120L160 16H340L440 60H790"/>
+              <path d="M5 62H240L290 42H400L440 60H790"/>
+              <circle cx="790" cy="60" r="4"/>
+            </svg>
+          </div>
           <p class="korean">새로운 기술을 탐구하고, 결과로 증명하다.</p>
           <p class="sub">사용자에게 필요한 기능을 명확한 인터페이스로 구현하는<br>프론트엔드 개발자 이재범입니다.</p>
-          <div class="actions"><a class="button primary" href="#projects">대표 프로젝트 보기<span>↘</span></a></div>
+          <div class="actions">
+            <a class="button primary" href="#projects">대표 프로젝트 보기<span aria-hidden="true">↘</span></a>
+          </div>
         </div>
       </section>
       <section id="about" class="about-section">
         <div class="about-heading">
           <div class="eyebrow">ABOUT ME</div>
-          <h2>아이디어를 작동하는 화면으로.</h2>
+          <h2>새로움을 두려워하지 않고,<br>책임감 있게 결과를 만들어내는 프론트엔드 개발자</h2>
         </div>
         <div class="about-body">
-          <div class="profile-photo" role="img" aria-label="증명사진을 넣을 공간"></div>
+          <div class="profile-photo">
+            <img src="assets/profile_img.webp" alt="프론트엔드 개발자 이재범 프로필 사진" width="600" height="750" loading="lazy">
+          </div>
           <dl class="facts about-facts">
             <dt>NAME</dt>
             <dd>이재범</dd>
@@ -61,51 +82,84 @@
             </dd>
           </dl>
         </div>
+        <div class="about-values">
+          <article class="about-value" tabindex="0">
+            <div class="value-graphic" aria-hidden="true">
+              <svg viewBox="0 0 130 80" aria-hidden="true" focusable="false"><circle cx="20" cy="40" r="4"/><path class="value-line" d="M24 40H62L92 12M62 40H108M62 40L92 68"/><circle class="value-end" cx="95" cy="12" r="3"/><circle class="value-end" cx="111" cy="40" r="3"/><circle class="value-end" cx="95" cy="68" r="3"/></svg>
+            </div>
+            <h3>탐구</h3>
+            <p>익숙하지 않은 기술도 작은 기능부터 직접 구현하며 익힙니다.</p>
+          </article>
+          <article class="about-value" tabindex="0">
+            <div class="value-graphic" aria-hidden="true">
+              <svg viewBox="0 0 130 80" aria-hidden="true" focusable="false"><circle cx="15" cy="55" r="4"/><path d="M19 55H45V25H60M88 25H108"/><path class="value-line" d="M60 25H88"/><circle class="value-end" cx="112" cy="25" r="4"/></svg>
+            </div>
+            <h3>문제 해결</h3>
+            <p>문제가 발생하면 원인을 나누어 살펴보고, 해결 과정을 기록합니다.</p>
+          </article>
+          <article class="about-value" tabindex="0">
+            <div class="value-graphic" aria-hidden="true">
+              <svg viewBox="0 0 130 80" aria-hidden="true" focusable="false"><path d="M40 15H90V65H40V38"/><path class="value-line" d="M40 38V15"/><path class="value-fill" d="M45 20H85V60H45Z"/><path class="value-check" d="m53 40 9 9 17-19"/></svg>
+            </div>
+            <h3>책임감</h3>
+            <p>기능 구현 이후에도 화면과 동작을 점검하며 완성도를 높입니다.</p>
+          </article>
+        </div>
       </section>
       <section id="skills">
         <div class="section-top">
           <div>
             <div class="eyebrow">CAPABILITIES</div>
-            <h2>Skills & tools</h2>
+            <h2>Skills &amp; tools</h2>
           </div>
         </div>
         <div class="skills">
           <article class="skill">
-            <span class="num">01 / CORE</span>
-            <h3>Frontend development</h3>
+            <span class="num">01 / WEB</span>
+            <h3>HTML &amp; CSS</h3>
             <div class="tags">
               <div class="skill-item">
                 <button type="button" class="skill-tag" aria-describedby="skill-description-1">
                   <span class="skill-icon" aria-hidden="true">
                     <svg viewBox="0 0 32 32" fill="none" aria-hidden="true" focusable="false">
-                      <g stroke="#149ECA" stroke-width="1.5">
-                        <ellipse cx="16" cy="16" rx="14" ry="5.3"/>
-                        <ellipse cx="16" cy="16" rx="14" ry="5.3" transform="rotate(60 16 16)"/>
-                        <ellipse cx="16" cy="16" rx="14" ry="5.3" transform="rotate(120 16 16)"/>
-                      </g>
-                      <circle cx="16" cy="16" r="2.6" fill="#149ECA"/>
+                      <path d="M3 2h26l-2.4 25L16 30 5.4 27 3 2Z" fill="#E34F26"/>
+                      <path d="M16 4v23.5l8.7-2.4L26.7 4H16Z" fill="#F16529"/>
+                      <path
+                        d="M8 8h16l-.4 3H11.4l.3 3h11.5l-1 9-6.2 1.7L9.7 23l-.5-5h3.2l.3 2.7 3.3.8 3.3-.8.3-3.5H8.7L8 8Z"
+                        fill="white"
+                      />
                     </svg>
                   </span>
-                  React
+                  HTML
                 </button>
                 <span class="skill-tooltip" id="skill-description-1" role="tooltip">
-                  컴포넌트 분리, Hooks를 활용한 상태 관리와 API 연동이 가능합니다.
+                  시맨틱 태그를 활용해 웹페이지의 구조와 콘텐츠를 구성합니다.
                 </span>
               </div>
               <div class="skill-item">
                 <button type="button" class="skill-tag" aria-describedby="skill-description-2">
                   <span class="skill-icon" aria-hidden="true">
                     <svg viewBox="0 0 32 32" fill="none" aria-hidden="true" focusable="false">
-                      <rect x="1" y="1" width="30" height="30" rx="2" fill="#3178C6"/>
-                      <text x="7" y="25" fill="white" font-family="Arial,sans-serif" font-size="19" font-weight="bold" letter-spacing="-1">TS</text>
+                      <path d="M3 2h26l-2.4 25L16 30 5.4 27 3 2Z" fill="#1572B6"/>
+                      <path d="M16 4v23.5l8.7-2.4L26.7 4H16Z" fill="#33A9DC"/>
+                      <path
+                        d="M8 8h16l-.4 3-10 4h9.6l-1 8-6.2 1.7L9.7 23l-.4-4h3.2l.2 1.7 3.3.8 3.3-.8.3-3H8.8l-.3-3L18 11H8.4L8 8Z"
+                        fill="white"
+                      />
                     </svg>
                   </span>
-                  TypeScript
+                  CSS
                 </button>
                 <span class="skill-tooltip" id="skill-description-2" role="tooltip">
-                  타입과 인터페이스를 정의하고 컴포넌트에 적용할 수 있습니다.
+                  Flex와 Grid를 활용해 레이아웃과 반응형 화면을 구현합니다.
                 </span>
               </div>
+            </div>
+          </article>
+          <article class="skill">
+            <span class="num">02 / DEVELOPMENT</span>
+            <h3>Interactive development</h3>
+            <div class="tags">
               <div class="skill-item">
                 <button type="button" class="skill-tag" aria-describedby="skill-description-3">
                   <span class="skill-icon" aria-hidden="true">
@@ -117,101 +171,37 @@
                   JavaScript
                 </button>
                 <span class="skill-tooltip" id="skill-description-3" role="tooltip">
-                  비동기 처리와 DOM 이벤트를 활용해 화면 동작을 구현할 수 있습니다.
+                  이벤트와 DOM을 활용해 화면의 동작과 인터랙션을 구현합니다.
                 </span>
               </div>
-            </div>
-          </article>
-          <article class="skill">
-            <span class="num">02 / EXPERIENCE</span>
-            <h3>UI & performance</h3>
-            <div class="tags">
               <div class="skill-item">
                 <button type="button" class="skill-tag" aria-describedby="skill-description-4">
-                  <span class="skill-icon skill-icon-wide" aria-hidden="true">
-                    <svg viewBox="0 0 60 32" fill="none" aria-hidden="true" focusable="false">
-                      <path d="M2 2h24l-2.2 25L14 30l-9.8-3L2 2Z" fill="#E34F26"/>
-                      <path d="M14 4v23.5l7.8-2.4L23.7 4H14Z" fill="#F16529"/>
-                      <path
-                        d="M7 8h14l-.3 3H10.4l.2 3h9.8l-.8 9-5.6 1.7L8.4 23 8 18h3l.2 2.7 2.8.8 2.8-.8.3-3.5H7.6L7 8Z"
-                        fill="white"
-                      />
-                      <path d="M34 2h24l-2.2 25L46 30l-9.8-3L34 2Z" fill="#1572B6"/>
-                      <path d="M46 4v23.5l7.8-2.4L55.7 4H46Z" fill="#33A9DC"/>
-                      <path
-                        d="M39 8h14l-.3 3H42.3l.2 3h9.9l-.8 9-5.6 1.7-5.6-1.7-.4-5h3l.2 2.7 2.8.8 2.8-.8.3-3.5h-9.6L39 8Z"
-                        fill="white"
-                      />
+                  <span class="skill-icon" aria-hidden="true">
+                    <svg viewBox="0 0 32 32" fill="none" aria-hidden="true" focusable="false">
+                      <g fill="#202020">
+                        <path d="m18 2 12 7-4 2-8-5v10l-4-2V6l-3 2V4l7-2Z"/>
+                        <path d="m30 10v14l-4-2V13l-9 5v-4l9-5 4 1Z"/>
+                        <path d="m29 25-12 7v-5l8-4-9-5 4-2 9 5v4Z"/>
+                        <path d="m15 31-12-7 4-2 8 5V17l4 2v9l-4 3Z"/>
+                        <path d="M2 23V9l4 2v9l9-5v4l-9 5-4-1Z"/>
+                        <path d="M3 8 15 1v5l-8 4 9 5-4 2-9-5V8Z"/>
+                      </g>
                     </svg>
                   </span>
-                  HTML / CSS
+                  Unity
                 </button>
                 <span class="skill-tooltip" id="skill-description-4" role="tooltip">
-                  시맨틱 마크업과 Flex·Grid로 웹 레이아웃을 구현할 수 있습니다.
-                </span>
-              </div>
-              <div class="skill-item">
-                <button type="button" class="skill-tag" aria-describedby="skill-description-5">
-                  <span class="skill-icon" aria-hidden="true">
-                    <svg viewBox="0 0 32 32" fill="none" aria-hidden="true" focusable="false">
-                      <g stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="2" y="5" width="22" height="16" rx="2"/>
-                        <path d="M10 21v5m-4 0h12"/>
-                        <rect x="21" y="13" width="9" height="16" rx="1.8"/>
-                        <path d="M24.5 26h2"/>
-                      </g>
-                    </svg>
-                  </span>
-                  Responsive
-                </button>
-                <span class="skill-tooltip" id="skill-description-5" role="tooltip">
-                  미디어 쿼리를 활용해 PC·태블릿·모바일 화면에 대응할 수 있습니다.
-                </span>
-              </div>
-              <div class="skill-item">
-                <button type="button" class="skill-tag" aria-describedby="skill-description-6">
-                  <span class="skill-icon" aria-hidden="true">
-                    <svg viewBox="0 0 32 32" fill="none" aria-hidden="true" focusable="false">
-                      <g stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="16" cy="16" r="13.5"/>
-                        <circle cx="16" cy="9" r="2"/>
-                        <path d="m8.5 13 7.5 2 7.5-2M16 15v5m0 0-4 6m4-6 4 6"/>
-                      </g>
-                    </svg>
-                  </span>
-                  Accessibility
-                </button>
-                <span class="skill-tooltip" id="skill-description-6" role="tooltip">
-                  키보드 탐색, 대체 텍스트와 기본 ARIA 속성을 적용할 수 있습니다.
+                  씬과 오브젝트를 구성하고 기본적인 인터랙션을 제작합니다.
                 </span>
               </div>
             </div>
           </article>
           <article class="skill">
             <span class="num">03 / WORKFLOW</span>
-            <h3>Tools & collaboration</h3>
+            <h3>Design &amp; collaboration</h3>
             <div class="tags">
               <div class="skill-item">
-                <button type="button" class="skill-tag" aria-describedby="skill-description-7">
-                  <span class="skill-icon" aria-hidden="true">
-                    <svg viewBox="0 0 32 32" fill="none" aria-hidden="true" focusable="false">
-                      <rect x="5" y="5" width="22" height="22" rx="2" transform="rotate(45 16 16)" fill="#F05032"/>
-                      <g stroke="white" stroke-width="1.9" stroke-linecap="round"><path d="m10 7 11 11M13 10v13"/></g>
-                      <g fill="white">
-                        <circle cx="13" cy="10" r="2.3"/>
-                        <circle cx="21" cy="18" r="2.3"/>
-                        <circle cx="13" cy="23" r="2.3"/>
-                      </g>
-                    </svg>
-                  </span>
-                  Git
-                </button>
-                <span class="skill-tooltip" id="skill-description-7" role="tooltip">
-                  브랜치 관리와 변경 이력 추적, 기본적인 충돌 해결이 가능합니다.
-                </span>
-              </div>
-              <div class="skill-item">
-                <button type="button" class="skill-tag" aria-describedby="skill-description-8">
+                <button type="button" class="skill-tag" aria-describedby="skill-description-5">
                   <span class="skill-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 36" fill="none" aria-hidden="true" focusable="false">
                       <path d="M12 0H6a6 6 0 0 0 0 12h6V0Z" fill="#F24E1E"/>
@@ -223,25 +213,24 @@
                   </span>
                   Figma
                 </button>
-                <span class="skill-tooltip" id="skill-description-8" role="tooltip">
-                  디자인의 간격과 스타일을 확인하고 화면 구현에 반영할 수 있습니다.
+                <span class="skill-tooltip" id="skill-description-5" role="tooltip">
+                  화면을 설계하고 디자인의 간격과 스타일을 구현에 반영합니다.
                 </span>
               </div>
               <div class="skill-item">
-                <button type="button" class="skill-tag" aria-describedby="skill-description-9">
+                <button type="button" class="skill-tag" aria-describedby="skill-description-6">
                   <span class="skill-icon" aria-hidden="true">
                     <svg viewBox="0 0 32 32" fill="none" aria-hidden="true" focusable="false">
-                      <g stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M11 6H7a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-4"/>
-                        <rect x="11" y="2" width="10" height="7" rx="2"/>
-                        <path d="m10 19 4 4 8-9"/>
-                      </g>
+                      <path
+                        fill="#202020"
+                        d="M16 1.5a14.5 14.5 0 0 0-4.6 28.3c.7.1 1-.3 1-.7v-2.5c-4 .9-4.9-1.7-4.9-1.7-.7-1.7-1.6-2.1-1.6-2.1-1.3-.9.1-.9.1-.9 1.5.1 2.2 1.5 2.2 1.5 1.3 2.2 3.4 1.6 4.2 1.2.1-.9.5-1.6.9-2-3.2-.4-6.6-1.6-6.6-7.2 0-1.6.6-2.9 1.5-3.9-.2-.4-.7-1.8.1-3.8 0 0 1.2-.4 4 1.5a14 14 0 0 1 7.4 0c2.8-1.9 4-1.5 4-1.5.8 2 .3 3.4.1 3.8 1 1 1.5 2.3 1.5 3.9 0 5.6-3.4 6.8-6.6 7.2.5.5 1 1.4 1 2.7v3.9c0 .4.3.8 1 .7A14.5 14.5 0 0 0 16 1.5Z"
+                      />
                     </svg>
                   </span>
-                  Testing
+                  GitHub
                 </button>
-                <span class="skill-tooltip" id="skill-description-9" role="tooltip">
-                  주요 사용자 동작의 테스트를 작성하고 결과를 확인할 수 있습니다.
+                <span class="skill-tooltip" id="skill-description-6" role="tooltip">
+                  프로젝트 코드를 관리하고 GitHub Pages로 웹사이트를 배포합니다.
                 </span>
               </div>
             </div>
@@ -256,6 +245,7 @@
           </div>
           <p>카드를 선택하면 프로젝트 상세 페이지로 이동합니다 ↗</p>
         </div>
+        <div class="project-arrival" aria-hidden="true"><span></span><i></i><span></span><i></i><span></span></div>
         <div class="projects" id="project-cards"></div>
       </section>
       <section id="contact">
@@ -267,18 +257,11 @@
             <a class="email">jb2jjang@gmail.com</a>
             <br />
             <a class="tell">+82 10 2823 3352</a>
-            <div class="contact-links"><a href="https://github.com/kwdmd" target="_blank" rel="noopener">GitHub ↗</a></div>
+            <div class="contact-links"><a href="https://github.com/" target="_blank" rel="noopener">GitHub ↗</a></div>
           </div>
           <div class="downloads">
-            <a href="./이력서_22361076_이재범.pdf"
-              download="이력서_22361076_이재범.pdf">
-              <span>이력서 다운로드</span><span>↓</span>
-            </a>
-
-            <a href="./자기소개서_22361076_이재범.pdf"
-              download="자기소개서_22361076_이재범.pdf">
-              <span>자기소개서 다운로드</span><span>↓</span>
-            </a>
+            <a href="assets/resume.pdf" download="이력서_22361076_이재범.pdf"><span>이력서 다운로드</span><span>↓</span></a>
+            <a href="assets/cover-letter.pdf" download="자기소개서_22361076_이재범.pdf"><span>자기소개서 다운로드</span><span>↓</span></a>
           </div>
         </div>
       </section>
@@ -353,6 +336,7 @@
         {
           "title": "Project 01 · 서비스 플랫폼",
           "summary": "",
+          "year": "",
           "tags": [
             "React",
             "TypeScript",
@@ -362,6 +346,7 @@
         {
           "title": "Project 02 · 데이터 대시보드",
           "summary": "",
+          "year": "",
           "tags": [
             "React",
             "Charts",
@@ -371,6 +356,7 @@
         {
           "title": "Project 03 · 인터랙티브 웹",
           "summary": "",
+          "year": "",
           "tags": [
             "JavaScript",
             "Responsive",
@@ -380,6 +366,7 @@
         {
           "title": "Project 04 · 웹 애플리케이션",
           "summary": "",
+          "year": "",
           "tags": [
             "React",
             "TypeScript",
@@ -390,4 +377,3 @@
     </template>
   </body>
 </html>
-
