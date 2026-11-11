@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ko">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rocket Defense · 웹 데모</title>
+<link rel="stylesheet" href="game.css">
+<main>
+  <a href="../index.html#case/unity-shooter">← 프로젝트 상세</a>
+  <h1>Rocket Defense</h1>
+  <p>Unity 프로젝트를 바탕으로 만든 웹 데모입니다. 과녁을 모두 맞혀 730점을 달성하세요.</p>
+  <p id="instructions">방향키로 이동하고 스페이스바로 발사합니다. Esc로 일시정지합니다.</p>
+  <div class="hud"><strong id="score">0 / 730점</strong><span id="status" role="status">시작 대기</span></div>
+  <canvas id="game" width="720" height="440" aria-label="Rocket Defense 게임 화면" aria-describedby="instructions" tabindex="0"></canvas>
+  <div class="actions">
+    <button id="start" type="button">게임 시작</button>
+    <button id="pause" type="button" disabled>일시정지</button>
+  </div>
+  <div class="controls" aria-label="화면 조작">
+    <button type="button" data-key="ArrowLeft" aria-label="왼쪽">←</button>
+    <button type="button" data-key="ArrowUp" aria-label="위">↑</button>
+    <button type="button" data-key="ArrowDown" aria-label="아래">↓</button>
+    <button type="button" data-key="ArrowRight" aria-label="오른쪽">→</button>
+    <button type="button" data-key="Space">발사</button>
+  </div>
+</main>
+<script src="game.js" defer></script>
+</html>

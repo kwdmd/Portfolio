@@ -1,0 +1,13 @@
+:root { color-scheme: dark; font-family: system-ui, sans-serif; background: #101714; color: #eff4e9; }
+body { margin: 0; }
+main { width: min(720px, calc(100% - 32px)); margin: 32px auto; }
+a { color: #cdfa87; }
+p { color: #bbcbb6; line-height: 1.6; }
+.hud, .actions, .controls { display: flex; flex-wrap: wrap; gap: 10px; margin: 12px 0; }
+.hud { justify-content: space-between; }
+canvas { display: block; box-sizing: border-box; width: 100%; height: auto; border: 1px solid #50634b; border-radius: 8px; }
+button { padding: 10px 16px; border: 1px solid #50634b; border-radius: 6px; background: #233327; color: inherit; font: inherit; cursor: pointer; }
+button:disabled { opacity: .55; cursor: default; }
+button:focus-visible, canvas:focus-visible { outline: 2px solid #cdfa87; outline-offset: 3px; }
+.controls button { touch-action: none; }
+#start { background: #cdfa87; color: #101714; font-weight: bold; }
