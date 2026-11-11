@@ -897,7 +897,7 @@ dialog :focus-visible {
   align-items: center;
   margin-top: 35px;
 }
-.case-bottom > a:last-child {
+.case-bottom > a:last-child:not(.primary) {
   font-size: 11px;
   color: #afd482;
 }

@@ -68,7 +68,6 @@ export function initNavigation(projects) {
           'process',
           'troubleshooting',
           'improvements',
-          'verification',
           'reflection',
         ].includes(section)
       )

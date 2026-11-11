@@ -38,12 +38,9 @@ export function renderProjectDetail(project) {
     ['process', '02 / PROCESS', '제작 과정', project.process],
     ['troubleshooting', '03 / IMPLEMENTATION', '핵심 구현', project.troubleshooting],
     ['improvements', '04 / ITERATION', '개선 전후', project.improvements],
-    ...(project.verification
-      ? [['verification', '05 / VERIFICATION', '검증 환경과 범위', project.verification]]
-      : []),
     [
       'reflection',
-      project.verification ? '06 / REFLECTION' : '05 / REFLECTION',
+      '05 / REFLECTION',
       '회고와 다음 과제',
       project.reflection,
     ],
@@ -82,47 +79,6 @@ export function renderProjectDetail(project) {
             </article>`,
       )
       .join('');
-  }
-  function verification(data) {
-    return html`<p class="verification-date">확인일 ${escapeHTML(data.date)}</p>
-      <dl class="verification-environment">
-        ${data.environment
-          .map(
-            ([label, value]) =>
-              html`<div>
-                <dt>${escapeHTML(label)}</dt>
-                <dd>${escapeHTML(value)}</dd>
-              </div>`,
-          )
-          .join('')}
-      </dl>
-      <h3>확인한 조건과 결과</h3>
-      <div class="verification-table-wrap">
-        <table class="case-checks">
-          <thead>
-            <tr>
-              <th scope="col">항목</th>
-              <th scope="col">확인 조건</th>
-              <th scope="col">결과</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${data.checks
-              .map(
-                (row) =>
-                  html`<tr>
-                    ${row.map((value) => html`<td>${escapeHTML(value)}</td>`).join('')}
-                  </tr>`,
-              )
-              .join('')}
-          </tbody>
-        </table>
-      </div>
-      <h3>아직 확인하지 않은 범위</h3>
-      <ul class="unverified-list">
-        ${data.unverified.map((item) => html`<li>${escapeHTML(item)}</li>`).join('')}
-      </ul>
-      <div class="case-note">${escapeHTML(data.note)}</div>`;
   }
   const source = sanitizeExternalURL(project.source),
     live = sanitizeResourceURL(project.live),
@@ -207,7 +163,7 @@ export function renderProjectDetail(project) {
               html`<section class="case-section" id="${id}">
                 <span>${label}</span>
                 <h2>${escapeHTML(title)}</h2>
-                ${id === 'verification' ? verification(content) : paragraphs(content) || '<p>내용을 정리 중입니다.</p>'}
+                ${paragraphs(content) || '<p>내용을 정리 중입니다.</p>'}
               </section>`,
           )
           .join('')}

@@ -47,7 +47,7 @@ const projects = [
     title: 'Com,ma',
     type: '2025 · 디지털콘텐츠제작 · 3인 팀 프로젝트',
     summary:
-      '가까운 자연에서 잠깐의 쉼을 제안하는 서비스 소개 웹사이트. 3인 팀에서 웹 프로그래밍을 담당해 전체 화면과 인터랙션을 구현했습니다.',
+      '가까운 자연에서 쉬어갈 장소를 찾는 서비스를 소개합니다. 3인 팀에서 전체 웹 화면과 배지 카드, 앱 화면 슬라이드를 구현했습니다.',
     meta: [
       ['YEAR / CLASS', '2025 · 디지털콘텐츠제작'],
       ['TECH', 'HTML · CSS · JavaScript'],
@@ -58,13 +58,12 @@ const projects = [
     imageAlt: 'Com,ma의 홈과 지도 UI를 담은 두 개의 스마트폰 목업과 안내 캐릭터',
     imageTheme: 'comma',
     disclosure:
-      '앱 화면은 서비스 콘셉트를 설명하는 목업입니다. 2025년 수업 결과물과 2026년 AI 협업 개선본을 각각 열어 비교할 수 있습니다.',
+      '앱 목업을 통해 장소 탐색부터 커뮤니티 참여까지의 흐름을 보여줍니다.',
     labels: {
       overview: '서비스와 구현 범위',
       process: '제작과 수정의 흐름',
       troubleshooting: '핵심 구현과 판단',
       improvements: '개선 전후',
-      verification: '검증 환경과 범위',
       reflection: '회고와 다음 과제',
     },
     overview: [
@@ -128,7 +127,7 @@ const projects = [
     ],
     liveLabel: '개선본 보기',
     original: 'https://kwdmd.github.io/Comma/',
-    detailIntro: '자연에서 쉬어가는 서비스의 이용 흐름을 웹으로 소개한 3인 팀 프로젝트입니다.',
+    detailIntro: '지도, 추천, 커뮤니티 화면을 따라 서비스의 이용 흐름을 보여주는 웹사이트입니다.',
     highlights: [
       {
         label: '목적',
@@ -140,54 +139,20 @@ const projects = [
       },
       {
         label: '핵심 구현',
-        text: '스크롤 등장 효과, 배지 중앙 정렬, 앱 화면과 설명이 함께 바뀌는 슬라이드.',
+        text: '스크롤에 맞춰 콘텐츠를 표시하고, 선택한 배지를 중앙에 배치했습니다. 슬라이드에서는 앱 화면과 설명이 함께 바뀝니다.',
       },
       {
         label: '개선 결과',
         text: '자동 재생을 멈추거나 키보드로 탐색할 수 있습니다. 양끝 배지 정렬과 좁은 화면 배치를 확인했습니다.',
       },
     ],
-    verification: {
-      date: '2026.11.05',
-      environment: [
-        ['실행 환경', 'Codex 앱 내 브라우저 · 로컬 HTTP 미리보기'],
-        ['화면 크기', '데스크톱 1280 × 900 CSS px / 작은 화면 390 × 844 CSS px'],
-        ['조작 방식', '마우스 클릭, Tab, 좌우 방향키, Home·End'],
-        ['확인 대상', '별도로 배포한 Com,ma 개선본의 슬라이드·배지 영역'],
-      ],
-      checks: [
-        ['슬라이드 정지', '자동 전환 후 일시정지, 6.5초 대기', '선택한 화면 유지'],
-        [
-          '순환과 동기화',
-          '첫·마지막 화면에서 앞뒤 이동, 키보드 이동',
-          '순환 정상 · 설명과 이미지 각각 1개 표시',
-        ],
-        [
-          '배지 선택과 중앙 정렬',
-          '처음·마지막 카드 선택, 화면 폭 변경',
-          '선택 상태 1개 · 측정 환경에서 중앙 정렬 확인',
-        ],
-        [
-          '작은 화면 배치',
-          '390 × 844 뷰포트에서 슬라이드·배지 확인',
-          '슬라이드 단일 열 · 조작 버튼 영역의 가로 넘침 없음',
-        ],
-      ],
-      unverified: [
-        '실제 iPhone·Android 기기의 터치 조작과 화면 표시',
-        'Safari·Firefox 등 다른 브라우저 및 정확한 엔진 버전별 호환성',
-        '스크린리더와 OS 모션 감소 설정을 바꾼 실기 검증',
-        '페이지 전체의 접근성 전수 검사, 실사용자 테스트, 성능 지표 개선',
-      ],
-      note: '작은 화면 결과는 브라우저 뷰포트를 바꿔 확인한 것으로, 실제 모바일 기기 테스트가 아닙니다. 위 결과는 표시한 환경과 기능 범위에 한정됩니다. 정확한 브라우저 엔진 버전은 기록하지 않았습니다.',
-    },
   },
   {
     id: 'kenshi-yonezu',
     title: '요네즈 켄시 소개 페이지',
     type: '뮤지션 소개 웹사이트',
     summary:
-      '요네즈 켄시의 대표곡, 활동 이력, 일러스트와 공연 정보를 살펴볼 수 있는 정적 웹사이트입니다.',
+      '추천곡으로 요네즈 켄시의 음악을 처음 접하고, 음반과 일러스트, 공연 정보까지 둘러볼 수 있는 소개 사이트입니다.',
     stack: ['HTML', 'CSS'],
     meta: [
       ['구성', '홈 · 디스코그래피 · 프로필 · 일러스트 · 콘서트'],
@@ -231,10 +196,10 @@ const projects = [
       },
     ],
     reflection: [
-      '다음에는 좁은 화면에서 메뉴와 콘텐츠의 줄바꿈을 점검하고, 키보드로 추천곡 링크와 공연 일정까지 이동할 수 있는지 확인할 계획입니다.',
+      '다음에는 좁은 화면에서 메뉴가 읽기 쉽게 줄바꿈되는지, 키보드만으로 추천곡과 공연 일정에 도달할 수 있는지 확인할 계획입니다.',
     ],
     detailIntro:
-      '대표곡으로 처음 접한 방문자가 음반, 활동 이력, 일러스트와 공연 정보까지 둘러볼 수 있는 소개 사이트입니다.',
+      '홈에서 추천곡을 소개하고, 더 듣고 싶은 방문자를 전체 음반 목록으로 안내합니다.',
     highlights: [
       {
         label: '목적',
@@ -259,7 +224,7 @@ const projects = [
     title: 'Rocket Defense',
     type: 'Unity 슈팅 게임',
     summary:
-      '과녁 편대를 막는 Unity 슈팅 게임입니다. Windows 버전에서 3개 스테이지와 재도전 메뉴를 구현했습니다.',
+      '로켓을 움직여 방어선으로 다가오는 과녁을 막는 Unity 슈팅 게임입니다. 세 스테이지에 도전할 수 있습니다.',
     stack: ['Unity', 'C#', 'TextMesh Pro'],
     meta: [
       ['실행 환경', 'Unity Windows · WebGL'],
@@ -270,9 +235,9 @@ const projects = [
     live: 'rocket-defense/unity/index.html',
     liveLabel: 'Unity 게임 플레이',
     disclosure:
-      'PC 브라우저에서 Unity WebGL 버전을 실행할 수 있습니다. 게임 화면을 클릭한 뒤 Enter로 시작하고, 방향키로 이동하고, 스페이스바로 발사합니다.',
+      'PC에서 게임 화면을 클릭한 뒤 Enter로 시작하세요. 방향키로 이동하고 스페이스바로 발사합니다.',
     overview: [
-      '방향키로 로켓을 움직이고 스페이스바로 발사합니다. Windows 버전은 Launch Zone, Asteroid Belt, Final Approach 세 스테이지로 구성되며, 각 스테이지의 과녁을 모두 제거하면 클리어됩니다.',
+      'Launch Zone, Asteroid Belt, Final Approach 순으로 진행합니다. 로켓이 과녁에 충돌하거나 과녁이 방어선을 넘으면 실패하며, 결과 화면에서 이유를 확인할 수 있습니다.',
     ],
     process: [
       '수업에서 만든 조작과 충돌 처리에 점수, 사운드, 결과 화면을 연결했습니다. 이후 시작 메뉴부터 스테이지 진행, 일시정지, 재도전까지 이어지는 흐름을 구성했습니다.',
@@ -290,7 +255,7 @@ const projects = [
       },
     ],
     labels: {
-      improvements: 'Windows 버전 개선점',
+      improvements: '게임 개선 전후',
     },
     improvements: [
       {
@@ -316,7 +281,7 @@ const projects = [
       '다음 확인 과제는 서로 다른 프레임 속도에서 이동 거리를 비교하고, 스테이지 전환과 재시작 때 입력·점수·과녁 수가 올바르게 초기화되는지 Windows에서 검증하는 것입니다.',
     ],
     detailIntro:
-      '로켓을 움직여 다가오는 과녁 편대를 막고 세 스테이지를 클리어하는 Unity 슈팅 게임입니다.',
+      '과녁이 방어선을 넘기 전에 모두 격파하면 다음 스테이지로 넘어갑니다.',
     highlights: [
       {
         label: '목적',
@@ -371,12 +336,9 @@ function renderProjectDetail(project) {
     ['process', '02 / PROCESS', '제작 과정', project.process],
     ['troubleshooting', '03 / IMPLEMENTATION', '핵심 구현', project.troubleshooting],
     ['improvements', '04 / ITERATION', '개선 전후', project.improvements],
-    ...(project.verification
-      ? [['verification', '05 / VERIFICATION', '검증 환경과 범위', project.verification]]
-      : []),
     [
       'reflection',
-      project.verification ? '06 / REFLECTION' : '05 / REFLECTION',
+      '05 / REFLECTION',
       '회고와 다음 과제',
       project.reflection,
     ],
@@ -415,47 +377,6 @@ function renderProjectDetail(project) {
             </article>`,
       )
       .join('');
-  }
-  function verification(data) {
-    return html`<p class="verification-date">확인일 ${escapeHTML(data.date)}</p>
-      <dl class="verification-environment">
-        ${data.environment
-          .map(
-            ([label, value]) =>
-              html`<div>
-                <dt>${escapeHTML(label)}</dt>
-                <dd>${escapeHTML(value)}</dd>
-              </div>`,
-          )
-          .join('')}
-      </dl>
-      <h3>확인한 조건과 결과</h3>
-      <div class="verification-table-wrap">
-        <table class="case-checks">
-          <thead>
-            <tr>
-              <th scope="col">항목</th>
-              <th scope="col">확인 조건</th>
-              <th scope="col">결과</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${data.checks
-              .map(
-                (row) =>
-                  html`<tr>
-                    ${row.map((value) => html`<td>${escapeHTML(value)}</td>`).join('')}
-                  </tr>`,
-              )
-              .join('')}
-          </tbody>
-        </table>
-      </div>
-      <h3>아직 확인하지 않은 범위</h3>
-      <ul class="unverified-list">
-        ${data.unverified.map((item) => html`<li>${escapeHTML(item)}</li>`).join('')}
-      </ul>
-      <div class="case-note">${escapeHTML(data.note)}</div>`;
   }
   const source = sanitizeExternalURL(project.source),
     live = sanitizeResourceURL(project.live),
@@ -540,7 +461,7 @@ function renderProjectDetail(project) {
               html`<section class="case-section" id="${id}">
                 <span>${label}</span>
                 <h2>${escapeHTML(title)}</h2>
-                ${id === 'verification' ? verification(content) : paragraphs(content) || '<p>내용을 정리 중입니다.</p>'}
+                ${paragraphs(content) || '<p>내용을 정리 중입니다.</p>'}
               </section>`,
           )
           .join('')}
@@ -748,7 +669,6 @@ function initNavigation(projects) {
           'process',
           'troubleshooting',
           'improvements',
-          'verification',
           'reflection',
         ].includes(section)
       )
