@@ -1588,3 +1588,20 @@ dialog :focus-visible {
 @media print {
   #back-to-top { display: none; }
 }
+
+.case-game {
+  margin-block: 1.5rem;
+}
+.case-game summary {
+  width: fit-content;
+  cursor: pointer;
+  color: var(--accent, #c7f88b);
+  padding-block: 0.5rem;
+}
+.case-game iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  margin-top: 0.75rem;
+  border: 0;
+}

@@ -126,6 +126,7 @@ export function renderProjectDetail(project) {
   }
   const source = sanitizeExternalURL(project.source),
     live = sanitizeResourceURL(project.live),
+    embeddedGame = project.id === 'unity-shooter' && live,
     image = sanitizeImageURL(project.image);
   const meta = project.meta || [
     ['PERIOD', project.period],
@@ -173,8 +174,12 @@ export function renderProjectDetail(project) {
           .join('')}
       </dl>
       <div class="project-resources">
-        ${live ? html`<a href="${live}" target="_blank" rel="noopener">${escapeHTML(project.liveLabel || '실행하기')} ↗</a>` : ''}${project.original ? html`<a href="${sanitizeResourceURL(project.original)}" target="_blank" rel="noopener">제작 당시 원본 ↗</a>` : ''}${project.improvementCode ? html`<a href="${sanitizeResourceURL(project.improvementCode)}" target="_blank" rel="noopener">개선 코드 ↗</a>` : ''}${source ? html`<a href="${source}" target="_blank" rel="noopener">${escapeHTML(project.sourceLabel || '소스 코드')} ↗</a>` : ''}
+        ${live && !embeddedGame ? html`<a href="${live}" target="_blank" rel="noopener">${escapeHTML(project.liveLabel || '실행하기')} ↗</a>` : ''}${project.original ? html`<a href="${sanitizeResourceURL(project.original)}" target="_blank" rel="noopener">제작 당시 원본 ↗</a>` : ''}${project.improvementCode ? html`<a href="${sanitizeResourceURL(project.improvementCode)}" target="_blank" rel="noopener">개선 코드 ↗</a>` : ''}${source ? html`<a href="${source}" target="_blank" rel="noopener">${escapeHTML(project.sourceLabel || '소스 코드')} ↗</a>` : ''}
       </div>
+      ${embeddedGame ? html`<details class="case-game">
+        <summary>Unity 게임 플레이</summary>
+        <iframe src="${live}" title="Rocket Defense Unity 게임" loading="lazy" allowfullscreen></iframe>
+      </details>` : ''}
       ${project.disclosure ? html`<p class="project-scope-note">${escapeHTML(project.disclosure)}</p>` : ''}
       ${
         image
