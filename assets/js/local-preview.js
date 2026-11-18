@@ -43,6 +43,73 @@ function sanitizeImageURL(value) {
 // Portfolio project content.
 const projects = [
   {
+    id: 'pop-ing',
+    title: 'POP-ING',
+    type: '2026 · 졸업전시 · TEAM WAVE',
+    summary:
+      '브랜드의 세계관을 온라인에서 관람하고 상품을 체험하는 3D 팝업 플랫폼입니다. 졸업전시 팀 프로젝트에서 3D 맵 구현을 담당했습니다.',
+    stack: ['웹 3D', '3D 맵'],
+    meta: [
+      ['제작', '2026 · 졸업전시 · TEAM WAVE'],
+      ['담당', '3D 맵 구현'],
+    ],
+    live: 'https://kwdmd.github.io/CapStone/',
+    liveLabel: '3D 맵 체험하기',
+    reference: 'https://www.digital-media.kr/degreeshow/2026/project?projectId=project-11',
+    image: 'assets/pop-ing-thumbnail.png',
+    detailImage: 'assets/pop-ing-thumbnail.png',
+    detailImageAlt: 'POP-ING 로고가 전시된 흑백 팝업 공간',
+    imageAlt: 'POP-ING 로고가 전시된 흑백 팝업 공간',
+    detailIntro:
+      '브랜드의 세계관과 소비자를 연결하는 웹 기반 3D 팝업 플랫폼입니다.',
+    highlights: [
+      {
+        label: '목적',
+        text: '공간과 시간의 제약을 줄여 온라인에서도 브랜드의 전시와 상품을 경험할 수 있게 합니다.',
+      },
+      {
+        label: '내 역할',
+        text: '2026년 졸업전시 TEAM WAVE에서 3D 맵 구현을 담당했습니다.',
+      },
+      {
+        label: '핵심 경험',
+        text: '3D 공간 안에서 이동하고 주변을 둘러보며 온라인 팝업을 탐색합니다.',
+      },
+      {
+        label: '결과물',
+        text: '공개된 3D 맵을 브라우저에서 직접 체험할 수 있습니다.',
+      },
+    ],
+    labels: {
+      overview: '서비스와 목표',
+      process: '프로젝트와 담당 범위',
+      troubleshooting: '3D 맵 탐색',
+      improvements: '프로젝트 소개',
+      reflection: '작업의 의미',
+    },
+    overview: [
+      'POP-ING은 기업의 공간·시간·비용 부담을 보완하고, 소비자가 온라인에서 전시 관람과 상품 체험, 구매 경험으로 이어갈 수 있도록 기획한 디지털 팝업 플랫폼입니다.',
+    ],
+    process: [
+      '2026년 졸업전시를 위해 TEAM WAVE가 함께 제작했습니다. 기획·디자인·프로그래밍으로 구성된 팀에서 3D 맵 구현을 맡았습니다.',
+    ],
+    troubleshooting: [
+      {
+        title: '공간 안에서 이동하고 둘러보기',
+        solution: '공개된 맵은 WASD 또는 방향키 이동, Shift 달리기, 드래그 둘러보기, 휠 확대·축소를 안내합니다. V 키나 화면의 시점 전환 버튼으로 관람 시점을 바꿀 수 있습니다.',
+      },
+    ],
+    improvements: [
+      {
+        title: '졸업전시에서 소개한 POP-ING',
+        solution: '브랜드와 소비자를 연결하는 디지털 팝업 경험의 기획 배경과 팀 구성은 졸업전시 공식 소개에서 확인할 수 있습니다.',
+      },
+    ],
+    reflection: [
+      '웹 화면을 구성하는 경험을 3D 공간 구현으로 확장한 작업입니다. 사용자가 직접 공간을 이동하며 콘텐츠를 탐색하는 경험을 다뤘습니다.',
+    ],
+  },
+  {
     id: 'comma',
     title: 'Com,ma',
     type: '2025 · 디지털콘텐츠제작 · 3인 팀 프로젝트',
@@ -315,7 +382,7 @@ function renderProjectCards(projects, additionalProjects) {
         html`<a
           class="additional-project ${sanitizeImageURL(project.image) ? 'with-preview' : ''}"
           href="#case/${escapeHTML(project.id)}"
-          >${sanitizeImageURL(project.image) ? html`<div class="project-preview ${project.imageTheme === 'comma' ? 'comma-preview' : ''}"><span>PROJECT / ${escapeHTML(project.title)}</span><img src="${sanitizeImageURL(project.image)}" alt="${escapeHTML(project.imageAlt || project.title + ' 대표 화면')}" loading="lazy" /></div>` : ''}
+          >${sanitizeImageURL(project.image) ? html`<div class="project-preview ${project.imageTheme === 'comma' ? 'comma-preview' : project.id === 'kenshi-yonezu' ? 'kenshi-preview' : ''}"><span>PROJECT / ${escapeHTML(project.title)}</span><img src="${sanitizeImageURL(project.image)}" alt="${escapeHTML(project.imageAlt || project.title + ' 대표 화면')}" loading="lazy" /></div>` : ''}
           <div class="additional-project-body">
             <span>${escapeHTML(project.type || 'PROJECT')}</span>
             <h3>${escapeHTML(project.title)}</h3>
@@ -398,8 +465,8 @@ function renderProjectDetail(project) {
       <h1 tabindex="-1">${escapeHTML(project.title)}</h1>
       <p>${escapeHTML(project.detailIntro || project.summary)}</p>
       ${thumbnail
-        ? html`<img class="project-image case-thumbnail ${project.imageTheme === 'comma' ? 'comma-image' : 'wide-thumbnail'}"
-            src="${thumbnail}" alt="${escapeHTML(project.detailImageAlt || project.imageAlt || project.title)}" />`
+        ? html`<div data-project="${escapeHTML(project.id)}" class="case-thumbnail-frame ${project.id === 'kenshi-yonezu' ? 'kenshi-thumbnail-frame' : ''}"><img class="project-image case-thumbnail ${project.imageTheme === 'comma' ? 'comma-image' : 'wide-thumbnail'}"
+            src="${thumbnail}" alt="${escapeHTML(project.detailImageAlt || project.imageAlt || project.title)}" /></div>`
         : ''}
       ${
         project.highlights
@@ -428,7 +495,7 @@ function renderProjectDetail(project) {
           .join('')}
       </dl>
       <div class="project-resources">
-        ${live && !embeddedGame ? html`<a href="${live}" target="_blank" rel="noopener">${escapeHTML(project.liveLabel || '실행하기')} ↗</a>` : ''}${project.original ? html`<a href="${sanitizeResourceURL(project.original)}" target="_blank" rel="noopener">제작 당시 원본 ↗</a>` : ''}${project.improvementCode ? html`<a href="${sanitizeResourceURL(project.improvementCode)}" target="_blank" rel="noopener">개선 코드 ↗</a>` : ''}${source ? html`<a href="${source}" target="_blank" rel="noopener">${escapeHTML(project.sourceLabel || '소스 코드')} ↗</a>` : ''}
+        ${live && !embeddedGame ? html`<a href="${live}" target="_blank" rel="noopener">${escapeHTML(project.liveLabel || '실행하기')} ↗</a>` : ''}${project.reference ? html`<a href="${sanitizeExternalURL(project.reference)}" target="_blank" rel="noopener">졸업전시 소개 ↗</a>` : ''}${project.original ? html`<a href="${sanitizeResourceURL(project.original)}" target="_blank" rel="noopener">제작 당시 원본 ↗</a>` : ''}${project.improvementCode ? html`<a href="${sanitizeResourceURL(project.improvementCode)}" target="_blank" rel="noopener">개선 코드 ↗</a>` : ''}${source ? html`<a href="${source}" target="_blank" rel="noopener">${escapeHTML(project.sourceLabel || '소스 코드')} ↗</a>` : ''}
       </div>
       ${embeddedGame ? html`<details class="case-game">
         <summary>Unity 게임 플레이</summary>

@@ -17,7 +17,7 @@ export function renderProjectCards(projects, additionalProjects) {
         html`<a
           class="additional-project ${sanitizeImageURL(project.image) ? 'with-preview' : ''}"
           href="#case/${escapeHTML(project.id)}"
-          >${sanitizeImageURL(project.image) ? html`<div class="project-preview ${project.imageTheme === 'comma' ? 'comma-preview' : ''}"><span>PROJECT / ${escapeHTML(project.title)}</span><img src="${sanitizeImageURL(project.image)}" alt="${escapeHTML(project.imageAlt || project.title + ' 대표 화면')}" loading="lazy" /></div>` : ''}
+          >${sanitizeImageURL(project.image) ? html`<div class="project-preview ${project.imageTheme === 'comma' ? 'comma-preview' : project.id === 'kenshi-yonezu' ? 'kenshi-preview' : ''}"><span>PROJECT / ${escapeHTML(project.title)}</span><img src="${sanitizeImageURL(project.image)}" alt="${escapeHTML(project.imageAlt || project.title + ' 대표 화면')}" loading="lazy" /></div>` : ''}
           <div class="additional-project-body">
             <span>${escapeHTML(project.type || 'PROJECT')}</span>
             <h3>${escapeHTML(project.title)}</h3>
@@ -100,8 +100,8 @@ export function renderProjectDetail(project) {
       <h1 tabindex="-1">${escapeHTML(project.title)}</h1>
       <p>${escapeHTML(project.detailIntro || project.summary)}</p>
       ${thumbnail
-        ? html`<img class="project-image case-thumbnail ${project.imageTheme === 'comma' ? 'comma-image' : 'wide-thumbnail'}"
-            src="${thumbnail}" alt="${escapeHTML(project.detailImageAlt || project.imageAlt || project.title)}" />`
+        ? html`<div data-project="${escapeHTML(project.id)}" class="case-thumbnail-frame ${project.id === 'kenshi-yonezu' ? 'kenshi-thumbnail-frame' : ''}"><img class="project-image case-thumbnail ${project.imageTheme === 'comma' ? 'comma-image' : 'wide-thumbnail'}"
+            src="${thumbnail}" alt="${escapeHTML(project.detailImageAlt || project.imageAlt || project.title)}" /></div>`
         : ''}
       ${
         project.highlights
@@ -130,7 +130,7 @@ export function renderProjectDetail(project) {
           .join('')}
       </dl>
       <div class="project-resources">
-        ${live && !embeddedGame ? html`<a href="${live}" target="_blank" rel="noopener">${escapeHTML(project.liveLabel || '실행하기')} ↗</a>` : ''}${project.original ? html`<a href="${sanitizeResourceURL(project.original)}" target="_blank" rel="noopener">제작 당시 원본 ↗</a>` : ''}${project.improvementCode ? html`<a href="${sanitizeResourceURL(project.improvementCode)}" target="_blank" rel="noopener">개선 코드 ↗</a>` : ''}${source ? html`<a href="${source}" target="_blank" rel="noopener">${escapeHTML(project.sourceLabel || '소스 코드')} ↗</a>` : ''}
+        ${live && !embeddedGame ? html`<a href="${live}" target="_blank" rel="noopener">${escapeHTML(project.liveLabel || '실행하기')} ↗</a>` : ''}${project.reference ? html`<a href="${sanitizeExternalURL(project.reference)}" target="_blank" rel="noopener">졸업전시 소개 ↗</a>` : ''}${project.original ? html`<a href="${sanitizeResourceURL(project.original)}" target="_blank" rel="noopener">제작 당시 원본 ↗</a>` : ''}${project.improvementCode ? html`<a href="${sanitizeResourceURL(project.improvementCode)}" target="_blank" rel="noopener">개선 코드 ↗</a>` : ''}${source ? html`<a href="${source}" target="_blank" rel="noopener">${escapeHTML(project.sourceLabel || '소스 코드')} ↗</a>` : ''}
       </div>
       ${embeddedGame ? html`<details class="case-game">
         <summary>Unity 게임 플레이</summary>

@@ -1441,12 +1441,6 @@ dialog :focus-visible {
   transform: translateY(-50%);
 }
 
-.project-image.comma-image.case-thumbnail {
-  display: block;
-  height: 280px;
-  margin: 20px 0 0;
-}
-
 /* Typography for primary content and navigation */
 .hero h1 {
   font-size: 62px;
@@ -1530,14 +1524,6 @@ dialog :focus-visible {
   background: #eaf0e8;
 }
 
-.project-image.wide-thumbnail {
-  width: 100%;
-  height: 280px;
-  object-fit: contain;
-  background: #080a25;
-  margin: 20px 0 0;
-}
-
 .project-preview:not(.comma-preview) {
   position: relative;
   padding: 0;
@@ -1604,4 +1590,49 @@ dialog :focus-visible {
   aspect-ratio: 16 / 10;
   margin-top: 0.75rem;
   border: 0;
+}
+
+.case-thumbnail-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  margin-top: 20px;
+  border: 1px solid var(--line);
+}
+.case-thumbnail-frame .project-image.case-thumbnail {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  object-fit: contain;
+  object-position: center;
+}
+.project-preview.kenshi-preview img {
+  width: 101.5%;
+  max-width: none;
+}
+.case-thumbnail-frame[data-project="comma"] {
+  background: #2ebb79;
+}
+.case-thumbnail-frame[data-project="kenshi-yonezu"] {
+  background: #f9f8f4;
+}
+.case-thumbnail-frame[data-project="unity-shooter"] {
+  background: #010232;
+}
+.case-thumbnail-frame[data-project="pop-ing"] {
+  background: #0a0a0a;
+}
+
+.case-thumbnail-frame[data-project="kenshi-yonezu"] .case-thumbnail {
+  clip-path: inset(0 1.3% 0 0);
+  transform: translateX(0.65%);
+}
+.case-thumbnail-frame[data-project="pop-ing"] .case-thumbnail {
+  object-fit: cover;
 }
