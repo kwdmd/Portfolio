@@ -1,8 +1,8 @@
-import { projects } from './projects.js';
-import { query } from './dom-utils.js';
-import { renderProjectCards } from './project-renderer.js';
-import { initHomeInteractions } from './home-interactions.js';
-import { initNavigation } from './navigation.js';
+import { projects } from './projects.js?v=20261126-stage-fade-fix';
+import { query } from './dom-utils.js?v=20261126-stage-fade-fix';
+import { renderProjectCards } from './project-renderer.js?v=20261126-stage-fade-fix';
+import { initHomeInteractions } from './home-interactions.js?v=20261126-stage-fade-fix';
+import { initNavigation } from './navigation.js?v=20261126-stage-fade-fix';
 
 const validProjects = projects.filter(
   (project) => /^[a-z0-9-]+$/.test(project.id) && project.id !== 'portfolio',

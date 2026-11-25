@@ -1,6 +1,6 @@
-import { query, queryAll } from './dom-utils.js';
-import { renderProjectDetail } from './project-renderer.js';
-import { portfolioHTML } from './portfolio-case.js';
+import { query, queryAll } from './dom-utils.js?v=20261126-stage-fade-fix';
+import { renderProjectDetail } from './project-renderer.js?v=20261126-stage-fade-fix';
+import { portfolioHTML } from './portfolio-case.js?v=20261126-stage-fade-fix';
 
 /** Hash routes also work under a GitHub Pages repository subdirectory. */
 export function initNavigation(projects) {
@@ -65,6 +65,7 @@ export function initNavigation(projects) {
         section &&
         [
           'overview',
+          'results',
           'process',
           'troubleshooting',
           'improvements',
@@ -85,7 +86,7 @@ export function initNavigation(projects) {
       const returning = homeView.hidden;
       homeView.hidden = false;
       caseView.hidden = true;
-      document.title = '이재범 — Frontend Portfolio';
+      document.title = '이재범 — 인터랙티브 콘텐츠 제작자';
       const aliases = { lab: 'work', projects: 'work' };
       const target = aliases[hash] || hash;
       if (['home', 'work', 'skills', 'about', 'contact'].includes(target)) scrollToSection(target, behavior);

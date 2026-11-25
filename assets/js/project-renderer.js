@@ -4,7 +4,7 @@ import {
   sanitizeExternalURL,
   sanitizeResourceURL,
   sanitizeImageURL,
-} from './dom-utils.js';
+} from './dom-utils.js?v=20261126-stage-fade-fix';
 
 /** Render the project list from the editable data file. */
 export function renderProjectCards(projects, additionalProjects) {
@@ -33,7 +33,7 @@ export function renderProjectCards(projects, additionalProjects) {
 }
 
 export function renderProjectDetail(project) {
-  const sections = [
+  const sections = (project.sections || [
     ['overview', '01 / OVERVIEW', '문제와 목표', project.overview],
     ['process', '02 / PROCESS', '제작 과정', project.process],
     ['troubleshooting', '03 / IMPLEMENTATION', '핵심 구현', project.troubleshooting],
@@ -44,7 +44,7 @@ export function renderProjectDetail(project) {
       '회고와 다음 과제',
       project.reflection,
     ],
-  ].map(([id, label, title, content]) => [id, label, project.labels?.[id] || title, content]);
+  ]).map(([id, label, title, content]) => [id, label, project.labels?.[id] || title, content]);
   function paragraphs(items) {
     return (Array.isArray(items) ? items : [items])
       .filter(Boolean)
@@ -56,8 +56,12 @@ export function renderProjectDetail(project) {
               ${[
                 'problem',
                 'cause',
+                'impact',
+                'judgment',
                 'alternatives',
                 'solution',
+                'steps',
+                'principle',
                 'before',
                 'change',
                 'after',
@@ -67,11 +71,11 @@ export function renderProjectDetail(project) {
                 .filter((key) => item[key])
                 .map(
                   (key) =>
-                    html`<p>
+                    html`<div class="decision-field decision-${key}">
                       <strong
-                        >${{ problem: '문제', cause: '원인', alternatives: '비교한 대안', solution: '구현과 접근', before: '개선 전', change: '변경', after: '개선 후', evidence: '확인 근거', lesson: '배운 점' }[key]}</strong
-                      ><br />${escapeHTML(item[key]).replace(/\n/g, '<br>')}
-                    </p>`,
+                        >${{ problem: '문제', cause: '원인', impact: '사용 경험에 미친 영향', judgment: '판단 근거', steps: '진행한 작업', principle: '적용 원리', alternatives: '비교한 대안', solution: '구현과 접근', before: '개선 전', change: '적용한 작업', after: '개선 후', evidence: '확인 근거', lesson: '배운 점' }[key]}</strong
+                      >${Array.isArray(item[key]) ? html`<ol>${item[key].map(step => html`<li>${escapeHTML(step)}</li>`).join('')}</ol>` : html`<p>${escapeHTML(item[key]).replace(/\n/g, '<br>')}</p>`}
+                    </div>`,
                 )
                 .join(
                   '',
@@ -93,7 +97,7 @@ export function renderProjectDetail(project) {
   const detailImage = sanitizeImageURL(project.detailImage);
   const thumbnail = detailImage || ((project.imageTheme === 'comma' || project.id === 'unity-shooter') ? image : '');
 
-  return html`<article class="case-page ${project.highlights ? 'with-brief' : ''}">
+  return html`<article class="case-page ${project.id === 'comma' ? 'comma-case' : ''} ${['pop-ing', 'comma', 'kenshi-yonezu', 'unity-shooter'].includes(project.id) ? 'pop-ing-case' : ''} ${project.highlights ? 'with-brief' : ''}">
     <a class="back-link" href="#work">← 작업 목록으로</a>
     <div class="case-hero">
       <span class="case-kicker">${escapeHTML(project.type || 'PROJECT CASE STUDY')}</span>

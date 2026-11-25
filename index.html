@@ -8,8 +8,8 @@
       name="description"
       content="계원예술대학교 재학생 이재범의 디지털 콘텐츠 포트폴리오. 웹, 인터랙션, 3D 맵과 게임 제작 경험을 소개합니다."
     />
-    <title>이재범 — Digital Creator Portfolio</title>
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>이재범 — 인터랙티브 콘텐츠 제작자</title>
+    <link rel="stylesheet" href="assets/css/style.css?v=20261126-stage-fade-fix" />
   </head>
   <body>
     <a class="skip" href="#main">본문으로 건너뛰기</a>
@@ -20,164 +20,83 @@
       >
       <nav aria-label="주요 메뉴">
         <a href="#work">프로젝트</a><a href="#skills">기술 역량</a><a href="#about">소개</a>
-        <a href="#contact">연락하기</a>
+        <a href="#case/portfolio">제작 프로세스</a><a href="#contact">연락하기</a>
       </nav>
     </header>
     <main id="main">
       <div id="home-view">
-        <section class="hero" id="home">
-          <div class="hero-heading">
-            <p class="eyebrow"><i></i> LEE JAEBEOM / DIGITAL CREATOR PORTFOLIO</p>
-            <div class="hero-grid">
-              <div class="hero-copy">
-                <div class="student-tag">계원예술대학교 재학 · 디지털 콘텐츠 올라운더 지망</div>
-                <h1>새로운 기술을 <span>탐구하고,</span><br />결과로 <span>증명하다.</span></h1>
-                <p>
-                  웹 화면부터 3D 공간까지 만들고,<br />사용자의 행동에 반응하는 콘텐츠로
-                  완성합니다.
-                </p>
-                <div class="hero-actions">
-                  <a class="button primary" href="#work">프로젝트 보기 <span>↗</span></a>
-                </div>
-              </div>
-              <div class="orbital-map" aria-label="탐구 지도">
-                <div class="map-grid" aria-hidden="true"></div>
-                <div class="planet" aria-hidden="true"></div>
-                <div class="orbit orbit-one" aria-hidden="true"></div>
-                <div class="orbit orbit-two" aria-hidden="true"></div>
-                <span class="map-coordinate" aria-hidden="true">EXPLORATION MAP / 001</span
-                ><button class="orbit-node node-one" data-orbit="build">
-                  <i></i> BUILD<span>01</span></button
-                ><button class="orbit-node node-two" data-orbit="interact">
-                  <i></i> INTERACT<span>02</span></button
-                ><button class="orbit-node node-three" data-orbit="improve">
-                  <i></i> IMPROVE<span>03</span>
-                </button>
-                <div class="map-info" aria-live="polite">
-                  <span id="map-kicker">01 / BUILD</span
-                  ><strong id="map-title">기본기에서 출발합니다.</strong>
-                  <p id="map-description">구조를 정리하고, 작은 화면부터 유연하게 만듭니다.</p>
-                </div>
-                <button class="motion-toggle" id="motion-toggle" aria-pressed="false">
-                  궤도 회전 멈추기 Ⅱ
-                </button>
-              </div>
-            </div>
+        <section class="hero project-stage" id="home" data-current="pop-ing" aria-label="분야별 대표 프로젝트">
+          <div class="stage-media" aria-hidden="true">
+            <img id="landing-image" data-project="pop-ing" src="assets/pop-ing-stage-background.png" alt="" width="1787" height="880" fetchpriority="high" />
           </div>
-        <div class="hero-bottom"><span>LEARN → BUILD → QUESTION → IMPROVE</span></div></section>
+          <div class="stage-copy">
+            <p class="stage-intro">인터랙티브 콘텐츠 제작자 이재범입니다.</p>
+            <h1>사용자가 직접 탐색하는<br />화면과 공간을 만듭니다<span>.</span></h1>
+            <div class="stage-project" aria-live="polite" aria-atomic="true">
+              <h2 id="landing-title">POP-ING</h2>
+              <p id="landing-role">3D 맵 전반의 구현과 UI 제작, 로딩 개선과 아바타 모션 작업을 담당했습니다.</p>
+            </div>
+            <a class="stage-detail" id="landing-detail" href="#case/pop-ing">제작 과정 보기 ↗</a>
+          </div>
+          <div class="stage-bottom">
+            <div class="stage-options" role="group" aria-label="제작 분야 선택">
+              <span class="stage-selection-line" aria-hidden="true"></span>
+              <button type="button" data-landing="pop-ing" aria-pressed="true">공간 탐색</button>
+              <button type="button" data-landing="comma" aria-pressed="false">웹 인터랙션</button>
+              <button type="button" data-landing="unity-shooter" aria-pressed="false">게임 플레이</button>
+            </div>
+            <a href="#work">대표 프로젝트 보기</a>
+          </div>
+        </section>
         <section class="section work-section" id="work">
           <div class="section-top">
             <p class="eyebrow">01 / SELECTED WORK</p><span class="section-aside">화면과 코드를 연결하는 작업 기록</span>
           </div>
           <div class="section-heading">
-            <h2>대표 작업,<br /><span>그리고 만드는 과정.</span></h2><p>어떤 화면을 만들었는지,<br />어떤 방식으로 동작하게 했는지 설명합니다.</p>
+            <h2>대표 프로젝트<span>.</span></h2><p>웹·공간·게임을 만들며 고민한 과정과 결과입니다.</p>
           </div>
           <div id="additional-projects" class="additional-projects" hidden></div>
         </section>
         <section class="section skills-section" id="skills">
           <div class="section-top">
-            <p class="eyebrow">02 / CAPABILITIES</p><span class="section-aside">사용하는 기술과 활용 범위</span>
+            <p class="eyebrow">02 / CAPABILITIES</p><span class="section-aside">프로젝트에 적용한 원리와 판단</span>
           </div>
           <div class="section-heading">
-            <h2>기본기를 바탕으로,<br /><span>할 수 있는 일을 넓혀갑니다.</span></h2><p>웹 화면, 사용자 인터랙션, 3D 공간과 게임까지.<br />프로젝트에서 직접 다룬 제작 범위를 정리했습니다.</p>
+            <h2>기술을 적용하고,<br /><span>선택의 이유를 설명합니다.</span></h2><p>웹·3D·게임에서 다룬 원리와 구현 경험입니다.<br />각 프로젝트에서 작업 과정과 검증 범위를 확인할 수 있습니다.</p>
           </div>
-          <div class="evidence-skills capability-grid">
-            <article>
-              <div class="skill-heading">
-                <span>01 / WEB & INTERACTION</span>
-                <h3 class="skill-title"><span class="skill-icon"><img src="assets/skill-icons/js.svg" alt="" width="22" height="22" /></span>웹 · 인터랙션</h3>
-              </div>
-              <p>HTML·CSS·JavaScript로 정보를 구성하고 사용자의 입력에 반응하는 화면을 만듭니다.</p>
-              <h4 class="scope-label">활용 범위</h4>
-              <ul>
-                <li>HTML로 콘텐츠와 페이지 이동 구조 작성</li>
-                <li>CSS로 화면 배치·스타일·화면 크기 대응</li>
-                <li>JavaScript로 슬라이드·선택 상태·이벤트 처리</li>
-              </ul>
+          <div class="skills-list" aria-label="기술과 적용 사례">
+            <div class="skills-columns" aria-hidden="true"><span>기술</span><span>적용한 지식과 판단</span><span>관련 프로젝트</span></div>
+            <article class="skills-row">
+              <h3>JavaScript</h3>
+              <div class="skills-explanation"><h4>선택한 카드를 중앙으로</h4><p>카드 중심 좌표와 목록 영역 중심의 차이로 스크롤 위치를 계산했습니다. 앱 소개는 같은 인덱스로 이미지와 설명을 연결해 함께 전환합니다.</p></div>
+              <a class="skills-project" href="#case/comma"><img src="comma/img/header.png" alt="Com,ma 앱 화면과 안내 캐릭터" width="220" height="124" loading="lazy" /><span>Com,ma</span></a>
             </article>
-            <article>
-              <div class="skill-heading">
-                <span>02 / WEB 3D</span>
-                <h3 class="skill-title">3D 공간 구현</h3>
-              </div>
-              <p>졸업전시 POP-ING에서 브라우저로 탐색하는 3D 맵 구현을 담당했습니다.</p>
-              <h4 class="scope-label">활용 범위</h4>
-              <ul>
-                <li>온라인 팝업을 위한 3D 맵 구현</li>
-                <li>사용자가 공간을 이동하고 둘러보는 경험 구성</li>
-                <li>웹에서 직접 체험할 수 있는 결과물 제작</li>
-              </ul>
+            <article class="skills-row">
+              <h3>HTML · CSS</h3>
+              <div class="skills-explanation"><h4>정렬과 탐색의 기준</h4><p>공통 그리드와 제목 줄바꿈으로 카드의 정렬을 맞췄습니다. 앵커 링크는 섹션 id에 연결하고 고정 헤더에 가리지 않도록 스크롤 여백을 고려했습니다.</p></div>
+              <a class="skills-project" href="#case/kenshi-yonezu"><img src="assets/kenshi-improved-home.png" alt="요네즈 켄시 소개 웹사이트 첫 화면" width="220" height="124" loading="lazy" /><span>요네즈 켄시</span></a>
             </article>
-            <article>
-              <div class="skill-heading">
-                <span>03 / GAME & REALTIME</span>
-                <h3 class="skill-title"><span class="skill-icon"><img src="assets/skill-icons/unity.svg" alt="" width="22" height="22" /></span>Unity · C#</h3>
-              </div>
-              <p>사용자 입력과 게임 상태에 따라 동작하는 실시간 콘텐츠를 다룹니다.</p>
-              <h4 class="scope-label">활용 범위</h4>
-              <ul>
-                <li>이동·발사·충돌·점수 처리</li>
-                <li>스테이지 진행과 일시정지·재도전 흐름 구성</li>
-                <li>WebGL 빌드와 웹페이지 실행 연결</li>
-              </ul>
+            <article class="skills-row">
+              <h3>웹 3D</h3>
+              <div class="skills-explanation"><h4>로딩과 움직임의 개선</h4><p>파일 최적화로 데이터의 양을 줄이고, 변환·복사를 줄여 표시 전 처리 부담을 낮췄습니다. 아바타는 뼈대에 맞춰 모션을 적용하고 보정했습니다.</p></div>
+              <a class="skills-project" href="#case/pop-ing"><img src="assets/pop-ing-thumbnail.png" alt="POP-ING 온라인 팝업 공간" width="220" height="124" loading="lazy" /><span>POP-ING</span></a>
+            </article>
+            <article class="skills-row">
+              <h3>Unity · C#</h3>
+              <div class="skills-explanation"><h4>시간을 기준으로 일관된 조작</h4><p>초당 속도에 Time.deltaTime을 곱해 이동량을 계산했습니다. 길게 누르기와 연타에 같은 0.25초 발사 간격을 적용해 입력 방식에 따른 차이를 줄였습니다.</p></div>
+              <a class="skills-project" href="#case/unity-shooter"><img src="assets/rocket-defense-start-screen.png" alt="ROCKET DEFENSE 시작 화면" width="220" height="124" loading="lazy" /><span>ROCKET DEFENSE</span></a>
             </article>
           </div>
-          <div class="tool-scope">
-            <div class="tool-scope-heading">
-              <span>TOOLS & EXPLORATION</span><p>활용 도구와 확장 방향</p>
-            </div>
-            <div class="tool-scope-grid">
-              <article>
-                <div>
-                  <h3 class="skill-title"><span class="skill-icon skill-icon--figma"><img src="assets/skill-icons/figma.svg" alt="" width="22" height="22" /></span>Figma</h3>
-                  <span>디자인 이해 · 기초 활용</span>
-                </div>
-                <p>
-                  화면 구성과 요소의 간격·크기·색상 등 디자인 정보를 확인하는 도구로 활용합니다.
-                </p>
-              </article>
-              <article>
-                <div>
-                  <h3 class="skill-title"><span class="skill-icon skill-icon--github"><img src="assets/skill-icons/github.svg" alt="" width="22" height="22" /></span>GitHub</h3>
-                  <span>소스 관리 · 기초 활용</span>
-                </div>
-                <p>
-                  프로젝트 소스를 보관하고 변경 이력을 확인하며, 작업물을 공유하는 공간으로
-                  활용합니다.
-                </p>
-              </article>
-              <article>
-                <div>
-                  <h3 class="skill-title"><span class="skill-icon skill-icon--unity"><img src="assets/skill-icons/unity.svg" alt="" width="22" height="22" /></span>Unity</h3>
-                  <span>실행 환경 · 배포</span>
-                </div>
-                <p>
-                  Windows 실행본과 WebGL 빌드를 만들고, 브라우저에서 콘텐츠를 체험하는 방식으로
-                  연결합니다.
-                </p>
-              </article>
-              <article>
-                <div>
-                  <h3 class="skill-title"><span class="skill-icon"><img src="assets/skill-icons/openai.svg" alt="" width="22" height="22" /></span>AI 활용과 검토</h3>
-                  <span>ChatGPT · 프로젝트 개선에 활용</span>
-                </div>
-                <p>구현할 기능과 문제 상황을 설명하고 코드 초안과 오류 원인 분석에 AI를 활용합니다. 제안된 코드를 적용한 뒤 화면과 동작을 확인하며 수정합니다.</p>
-              </article>
-              <article>
-                <div>
-                  <h3 class="skill-title"><span class="skill-icon"><img src="assets/skill-icons/threejs.svg" alt="" width="22" height="22" /></span>Three.js</h3>
-                  <span>웹 3D · 학습·확장 목표</span>
-                </div>
-                <p>웹에서 3D 모델을 불러오고 카메라·조명·사용자 조작을 구성하는 역량을 확장하고자 합니다.</p>
-              </article>
-              <article>
-                <div>
-                  <h3 class="skill-title"><span class="skill-icon"><img src="assets/skill-icons/blender.svg" alt="" width="22" height="22" /></span>Blender</h3>
-                  <span>3D 에셋 제작 · 학습·확장 목표</span>
-                </div>
-                <p>모델 수정과 재질 설정, 웹에서 사용할 3D 에셋 내보내기를 익혀 공간 구현과 에셋 제작을 연결하고자 합니다.</p>
-              </article>
-            </div>
+          <div class="skills-tools">
+            <h3>제작에 활용하는 도구</h3>
+            <dl>
+              <div><dt>Figma</dt><dd>와이어프레임으로 화면 구조를 정리하고, UI 디자인을 제작합니다.</dd></div>
+              <div><dt>GitHub</dt><dd>제작한 모든 웹사이트를 GitHub를 통해 배포하고 있습니다.</dd><dd class="tool-project-links"><a href="#work">웹 프로젝트 보기</a></dd></div>
+              <div><dt>Unity</dt><dd>ROCKET DEFENSE와 POP-ING 제작에 활용했습니다.</dd><dd class="tool-project-links"><a href="#case/unity-shooter">ROCKET DEFENSE</a><a href="#case/pop-ing">POP-ING</a></dd></div>
+              <div><dt>AI 활용</dt><dd>작업 중 마주한 문제의 해결 방향과 접근 방법에 대한 조언을 구하는 데 활용합니다.</dd></div>
+              <div><dt>Three.js</dt><dd>POP-ING의 웹 기반 3D 맵 구현에 활용했습니다.</dd><dd class="tool-project-links"><a href="#case/pop-ing">POP-ING</a></dd></div>
+              <div><dt>Blender</dt><dd>POP-ING에 사용하는 3D 아바타 작업에 활용했습니다.</dd><dd class="tool-project-links"><a href="#case/pop-ing">POP-ING</a></dd></div>
+            </dl>
           </div>
         </section>
         <section class="section about-section" id="about">
@@ -192,7 +111,7 @@
               </div>
               <img class="about-portrait" src="assets/profile-lee-jaebeom.webp" alt="이재범 프로필 사진" width="600" height="750" loading="lazy" />
               <p class="about-intro">
-                웹과 인터랙션, 3D 공간을 연결하는<br />디지털 콘텐츠 올라운더를 꿈꾸는 대학생입니다.
+                사용자가 직접 경험하는 인터랙티브 콘텐츠를 만드는 이재범입니다.
               </p>
               <div class="education">
                 <span>2023.03 입학 · 2027.02 졸업 예정</span
@@ -255,6 +174,8 @@
       <span>✳ JB. <small>© 2026 이재범</small></span><span>Built with curiosity. Improved with feedback.</span>
     </footer>
     <button type="button" id="back-to-top" aria-label="맨 위로">↑</button>
-    <script src="assets/js/bootstrap.js" defer></script>
+    <script src="assets/js/bootstrap.js?v=20261126-stage-fade-fix" defer></script>
   </body>
 </html>
+
+

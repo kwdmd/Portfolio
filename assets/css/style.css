@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
 :root {
   --bg: #101714;
   --panel: #18211c;
@@ -23,8 +23,7 @@ body {
   background: var(--bg);
   color: var(--text);
   font:
-    14px/1.75 Manrope,
-    'Noto Sans KR',
+    14px/1.75 'Pretendard',
     sans-serif;
   word-break: keep-all;
 }
@@ -1635,4 +1634,388 @@ dialog :focus-visible {
 }
 .case-thumbnail-frame[data-project="pop-ing"] .case-thumbnail {
   object-fit: cover;
+}
+
+
+/* Typography hierarchy: display, section, component, body, label, metadata. */
+:root {
+  --type-display: 3.5rem;
+  --type-section: 2.25rem;
+  --type-component: 1.5rem;
+  --type-body: 1rem;
+  --type-label: .875rem;
+  --type-meta: .8125rem;
+  --type-caption: .75rem;
+  --type-category: .6875rem;
+  --type-decoration: .625rem;
+}
+body { font-size: var(--type-body); }
+.hero h1, .case-hero h1, .with-brief .case-hero h1,
+.supporting-case .case-hero h1 {
+  font-size: var(--type-display);
+  line-height: 1.25;
+}
+h2, .section-heading h2, .work-section .section-heading h2,
+.case-section h2, .supporting-case .case-section h2,
+.name-lockup h2, .contact-strip h2 {
+  font-size: var(--type-section);
+  line-height: 1.4;
+}
+h3, .additional-project h3, .additional-project-body h3,
+.skill-heading h3, .case-section h3, .decision h3,
+.tool-scope-grid h3, .about-values h3, .secondary-work h3 {
+  font-size: var(--type-component);
+  line-height: 1.5;
+}
+.hero-copy > p, .section-heading > p, .additional-project p,
+.additional-project-body p, .evidence-skills article > p,
+.tool-scope-grid p,
+.about-intro, .about-values p, .education strong,
+.contact-strip p, .case-hero > p, .with-brief .case-hero > p,
+.case-section p, .project-brief dd, .decision dd, dd,
+.secondary-work p, .tool-scope-heading > p, dialog p {
+  font-size: var(--type-body);
+  line-height: 1.85;
+}
+.student-tag, .site-header nav, .site-header nav a,
+.button, .text-link, .header-contact, .project-resources,
+.project-resources a, .case-nav, .case-nav a, .back-link,
+.project-brief dt, .case-meta dd, .additional-project b,
+.document-links a, summary,
+.project-visual-details summary, .case-bottom > a:last-child:not(.primary),
+.contact-actions, dialog label, dialog input {
+  font-size: var(--type-label);
+  line-height: 1.7;
+}
+/* Implementation evidence and operational feedback need readable text. */
+.verification-environment dd, .unverified-list,
+.with-brief .project-scope-note, .case-checks, .case-checks th,
+.case-code, .contact-actions > span {
+  font-size: var(--type-meta);
+  line-height: 1.8;
+}
+/* Supporting labels and annotations. */
+.section-aside, dt, .decision dt,
+.education > span, .tool-scope-grid article span,
+.document-links a > span, .verification-environment dt,
+dialog label > span {
+  font-size: var(--type-caption);
+  line-height: 1.75;
+}
+/* Project categories and section markers. */
+.eyebrow, .case-kicker, .case-meta dt, .case-section > span,
+.skill-heading > span, .tool-scope-heading > span,
+.additional-project > span, .additional-project-body > span,
+.project-preview > span, .tags span, .name-lockup small,
+.secondary-label, .contact-strip .eyebrow, dialog .eyebrow {
+  font-size: var(--type-category);
+  line-height: 1.75;
+}
+/* Decorative coordinates, numbering, dates and footer credits. */
+.hero-bottom, .map-coordinate, .map-info > span,
+.about-values article > span, .orbit-node > span,
+footer, footer small, footer > span:nth-child(2) {
+  font-size: var(--type-decoration);
+  line-height: 1.75;
+}
+.verification-date { font-size: var(--type-decoration) !important; }
+#copy-email { font-size: var(--type-component); }
+.logo { font-size: 1.75rem; white-space: nowrap; }
+.logo > span:first-child { font-size: 2rem; }
+footer > span:first-child { font-size: var(--type-body); }
+.student-tag { margin-bottom: 1.5rem; }
+.project-brief, .case-meta, .tool-scope-grid article { min-width: 0; }
+@media (max-width: 800px) {
+  :root { --type-display: 2.5rem; --type-section: 1.875rem; --type-component: 1.375rem; }
+}
+
+
+/* Compact typography for the exploration graphic and capability scope. */
+.orbit-node, .map-info strong {
+  font-size: 12px;
+  line-height: 1.6;
+}
+.map-info p, .motion-toggle {
+  font-size: 11px;
+  line-height: 1.75;
+}
+.map-coordinate, .map-info > span, .orbit-node > span {
+  font-size: 10px;
+}
+.scope-label {
+  font-size: 11px;
+  line-height: 1.6;
+}
+.evidence-skills ul, .capability-grid ul {
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+/* POP-ING case study reading hierarchy. */
+.pop-ing-case .case-section { padding-block: 2.5rem; }
+.pop-ing-case .decision { margin-block: 1.25rem; padding: 1.75rem; border-radius: .5rem; background: #17221c; }
+.pop-ing-case .decision h3 { font-size: 1.375rem; margin: 0 0 1.25rem; line-height: 1.5; }
+.pop-ing-case .decision-field + .decision-field { border-top: 1px solid var(--line); margin-top: 1.25rem; padding-top: 1.25rem; }
+.pop-ing-case .decision-field > strong { display: block; color: #c5dfa9; font-size: .75rem; margin-bottom: .5rem; font-weight: 600; }
+.pop-ing-case .decision-field p, .pop-ing-case .decision-field li { font-size: 1rem; line-height: 1.9; color: #d0d8cc; overflow-wrap: anywhere; }
+.pop-ing-case .decision-field p { margin: 0; max-width: 65ch; }
+.pop-ing-case .decision-field ol { margin: 0; padding-left: 1.4rem; }
+.pop-ing-case .decision-field li + li { margin-top: .65rem; }
+.pop-ing-case #improvements .decision-field:has(> strong) { padding-left: 1rem; border-left: 2px solid #617a4c; }
+
+/* Shared project evidence: comparison fields and separate source notes. */
+.case-page #improvements .decision {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+.case-page #improvements .decision { margin-block: 1.25rem; padding: 1.75rem; border-radius: .5rem; background: #17221c; }
+.case-page #improvements .decision h3 { grid-column: 1 / -1; margin-bottom: .25rem; }
+.case-page #improvements .decision-field {
+  min-width: 0;
+  margin: 0;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: .35rem;
+  background: #101a14;
+}
+.case-page #improvements .decision-field > strong { display: block; color: #c5dfa9; font-size: .8125rem; margin-bottom: .75rem; }
+.case-page #improvements .decision-field p,
+.case-page #improvements .decision-field li { color: #d0d8cc; font-size: .9375rem; line-height: 1.85; }
+.case-page #improvements .decision-field p { margin: 0; }
+.case-page #improvements .decision-field ol { margin: 0; padding-left: 1.4rem; }
+.case-page #improvements .decision-after { background: #22311d; border-color: #728e54; }
+.case-page #improvements .decision-evidence { grid-column: 1 / -1; background: transparent; border: 0; padding: .5rem 0 0; }
+.case-page #improvements .decision-evidence > strong { color: var(--muted); font-size: .75rem; margin-bottom: .25rem; }
+.case-page #improvements .decision-evidence p { color: var(--muted); font-size: .8125rem; max-width: none; }
+@media(max-width: 1050px) {
+ .case-page #improvements .decision { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Fit the comparison to the fields documented for each project. */
+@media(min-width: 1051px) {
+  .case-page #improvements .decision:not(:has(.decision-before)),
+  .case-page #improvements .decision:not(:has(.decision-after)) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .case-page #improvements .decision:has(.decision-before):has(.decision-after):not(:has(.decision-change)),
+  .case-page #improvements .decision:has(.decision-before):has(.decision-change):not(:has(.decision-after)) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Verification-only notes share the same full-width treatment across projects. */
+.case-page #improvements .decision:has(.decision-evidence):not(:has(.decision-before, .decision-change, .decision-after)) {
+  display: block;
+  padding: 1.25rem 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+  border-radius: 0;
+  background: transparent;
+}
+.case-page #improvements .decision:has(.decision-evidence):not(:has(.decision-before, .decision-change, .decision-after)) h3 {
+  font-size: 1rem;
+  margin-bottom: .75rem;
+}
+
+/* Keep all project details readable below the desktop canvas width. */
+@media screen and (max-width: 1280px) {
+  body:has(#case-view:not([hidden])) { width: 100%; }
+}
+@media screen and (max-width: 800px) {
+  body:has(#case-view:not([hidden])) { --pad: 20px; }
+  body:has(#case-view:not([hidden])) .site-header { padding: .75rem 20px; height: auto; min-height: 80px; gap: 1rem; }
+  body:has(#case-view:not([hidden])) .site-header nav { flex-wrap: wrap; justify-content: flex-end; gap: .25rem .75rem; }
+  .case-page { padding: 24px 20px 48px; }
+  .case-layout { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .case-nav { position: static; flex-direction: row; flex-wrap: wrap; padding-block: 1rem; gap: .5rem 1rem; border-bottom: 1px solid var(--line); }
+  .case-hero h1, .with-brief .case-hero h1 { overflow-wrap: anywhere; }
+  .project-brief { grid-template-columns: minmax(0, 1fr); }
+  .project-brief > div:nth-child(odd) { border-right: 0; }
+  .project-brief > div:not(:last-child) { border-bottom: 1px solid var(--line); }
+  .case-meta, .case-meta.two-columns { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .project-resources { flex-wrap: wrap; gap: 1rem; }
+  .pop-ing-case .decision, .case-page #improvements .decision { padding: 1.125rem; }
+  .case-page #improvements .decision:has(.decision-evidence):not(:has(.decision-before, .decision-change, .decision-after)) { padding-inline: 0; }
+}
+
+/* Link skill explanations to the implementation evidence. */
+.evidence-skills li + li { margin-top: .85rem; }
+.evidence-skills li strong { color: var(--text); font-weight: 600; }
+.evidence-skills li a { display: block; width: fit-content; color: var(--accent); text-decoration: underline; text-underline-offset: 3px; margin-top: .4rem; }
+
+.skills-tools { margin-top: 3rem; }
+.skills-tools > h3 { font-size: 14px; color: #b8c8ad; font-weight: 500; margin-bottom: 1.25rem; }
+.skills-tools dl { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); column-gap: 2rem; margin: 0; }
+.skills-tools dl > div { border-top: 1px solid var(--line); padding: 1rem 0; }
+.skills-tools dt { color: #e1e8da; font-size: 14px; font-weight: 600; margin-bottom: .35rem; }
+.skills-tools dd { color: #96a58c; font-size: 12px; line-height: 1.8; margin: 0; }
+
+/* Capabilities: technology, implementation principle, related work. */
+.skills-list { border-top: 1px solid #526348; }
+.skills-columns, .skills-row { display: grid; grid-template-columns: 1fr 2.4fr 1.15fr; column-gap: 3rem; }
+.skills-columns { padding: 1rem 0; color: #8fa184; font-size: 11px; }
+.skills-row { align-items: start; padding: 2rem 0; border-top: 1px solid var(--line); }
+.skills-row h3 { font-size: 24px; margin: 0; line-height: 1.45; letter-spacing: -.04em; }
+.skills-explanation h4 { font-size: 16px; font-weight: 600; color: #e1e8da; margin: 0 0 .65rem; line-height: 1.6; }
+.skills-explanation p { font-size: 14px; color: #b7c3af; line-height: 1.9; margin: 0; }
+.skills-row > a { display: block; width: fit-content; padding: .15rem 0 .4rem; color: var(--accent); border-bottom: 1px solid #526348; }
+.skills-row > a span { font-size: 14px; font-weight: 600; }
+
+.skills-row > a:hover { border-color: var(--accent); }
+/* Project thumbnail and title form one accessible detail link. */
+.skills-row > .skills-project { width: 100%; max-width: 220px; padding: 0; border: 0; }
+.skills-project img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: contain; background: #17211b; border: 1px solid var(--line); border-radius: 4px; }
+.skills-project span { display: block; margin-top: .65rem; line-height: 1.6; }
+.skills-project:hover img { border-color: var(--accent); }
+.skills-project:hover span { text-decoration: underline; text-underline-offset: 4px; }
+
+/* Match related-work thumbnails to each project's visual treatment. */
+.skills-project[href="#case/comma"] img { background-color: #2ebb79; }
+.skills-project[href="#case/pop-ing"] img { object-fit: cover; object-position: center; }
+
+.skills-tools .tool-project-links { display: flex; flex-wrap: wrap; gap: .4rem 1rem; margin-top: .65rem; }
+.skills-tools .tool-project-links a { color: var(--accent); font-size: 11px; text-decoration: underline; text-underline-offset: 3px; }
+
+
+@media(max-width:800px) {
+ .skills-columns { display: none; }
+ .skills-row { grid-template-columns: minmax(0,1fr); gap: 1rem; padding: 1.5rem 0; }
+ .skills-row h3 { font-size: 22px; }
+ .skills-tools dl { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0 1rem; }
+}
+
+/* Weekly landing: career statement and user-selected work. */
+.hero-grid { grid-template-columns: minmax(0,1.1fr) minmax(0,1fr); gap: 3rem; min-height: 590px; }
+.hero-copy { min-width: 0; }
+.hero h1 { font-size: clamp(36px,3.65vw,52px); white-space: normal; line-height: 1.4; letter-spacing: -.055em; overflow-wrap: anywhere; }
+.hero-copy > p, .student-tag { font-size: 16px; color: #d6ddd3; line-height: 1.85; }
+.student-tag { border: 0; padding: 0; }
+.landing-explorer { min-width: 0; padding-block: 2rem; }
+.landing-options { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1rem; }
+.landing-options button { color: #d6ddd3; border: 1px solid #526349; border-radius: 2rem; padding: .6rem .85rem; font-size: 13px; line-height: 1.5; }
+.landing-options button[aria-pressed="true"] { background: var(--accent); color: #142010; border-color: var(--accent); font-weight: 700; }
+.landing-preview { border: 1px solid var(--line); border-radius: .75rem; overflow: hidden; background: #17211b; }
+.landing-preview > a { display: block; }
+.landing-preview img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; display: block; }
+.landing-preview[data-current="comma"] img { object-fit: contain; background: #2ebb79; }
+.landing-preview[data-current="unity-shooter"] img { object-fit: contain; background: #010232; }
+.landing-project-copy { padding: 1.4rem; }
+.landing-project-copy h2 { font-size: 24px; margin: 0 0 .6rem; }
+.landing-project-copy p { font-size: 15px; color: #d6ddd3; line-height: 1.8; margin: 0 0 1rem; min-height: 3.6em; }
+.landing-project-copy > a { color: var(--accent); font-size: 14px; text-decoration: underline; text-underline-offset: 4px; }
+.hero-bottom { font-size: 12px; gap: 1rem; }
+.hero-bottom a { color: var(--accent); font-size: 13px; }
+.process-comparison { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1.5rem; }
+.process-comparison figure { margin: 0; min-width: 0; }
+.process-comparison img { display: block; width: 100%; border: 1px solid var(--line); }
+.process-comparison figcaption { font-size: 13px; margin-top: .65rem; color: var(--muted); line-height: 1.8; }
+.weekly-process .case-section p, .weekly-process .case-section li { font-size: 16px; line-height: 1.9; color: #bfcbb5; }
+.weekly-process .case-section li + li { margin-top: .6rem; }
+.weekly-process .case-code { font-size: 13px; line-height: 1.8; }
+@media screen { body { width: min(100%,1280px); } }
+@media(max-width:800px) {
+ :root { --pad: 20px; }
+ .site-header { padding: .75rem 20px; height: auto; min-height: 80px; gap: 1rem; }
+ .site-header nav { flex-wrap: wrap; justify-content: flex-end; gap: .25rem .75rem; }
+ .hero-grid { grid-template-columns: minmax(0,1fr); gap: 0; min-height: auto; }
+ .hero-copy { padding: 2rem 0 0; }
+ .hero h1 { font-size: clamp(30px,7.6vw,40px); }
+ .hero-bottom { flex-wrap: wrap; }
+ .process-comparison { grid-template-columns: minmax(0,1fr); }
+ .skills-section .section-heading { flex-wrap: wrap; gap: 1rem; }
+}
+@media(max-width:800px) {
+ .about-grid { grid-template-columns: minmax(0,1fr); }
+ .about-grid > *, .about-values { min-width: 0; }
+}
+
+.process-comparison img { aspect-ratio: 16 / 10; object-fit: contain; background: #101714; }
+
+/* Full-width project stage with a continuous editorial page below. */
+@media screen { body { width: 100%; } }
+:root { --content-width: 1280px; --shell-inset: max(var(--pad), calc((100% - var(--content-width)) / 2 + var(--pad))); }
+.site-header { padding-inline: var(--shell-inset); }
+#home-view > .section { max-width: var(--content-width); margin-inline: auto; }
+.hero.project-stage {
+ position: relative; isolation: isolate; overflow: hidden; display: flex; flex-direction: column;
+ justify-content: space-between; min-height: clamp(520px, calc(100svh - 230px), 820px);
+ padding: 72px var(--shell-inset) 28px; background: var(--bg);
+}
+.stage-media { position: absolute; inset: 0; z-index: -2; background: #101714; }
+.stage-media img { width: 100%; height: 100%; object-fit: cover; object-position: center 48%; display: block; }
+.project-stage::after { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+ background: linear-gradient(90deg, rgba(8,17,12,.84) 0%, rgba(8,17,12,.6) 37%, rgba(8,17,12,.12) 75%), linear-gradient(0deg,#101714 0%,rgba(16,23,20,.55) 13%,transparent 38%); }
+.stage-copy { max-width: 790px; padding-bottom: 38px; }
+.stage-intro { font-size: 16px; line-height: 1.8; color: #e0e6dc; margin: 0 0 30px; }
+.hero.project-stage h1 { font-size: clamp(38px,4.1vw,62px); line-height: 1.35; font-weight: 600; color: #f5f6ef; margin: 0 0 24px; letter-spacing: -.055em; }
+.hero.project-stage h1 span { color: var(--accent); }
+.stage-project { display: flex; align-items: baseline; flex-wrap: wrap; gap: .4rem 1rem; max-width: 650px; margin-bottom: 26px; }
+.stage-project h2 { font-size: 20px; line-height: 1.6; margin: 0; }
+.stage-project p { font-size: 14px; line-height: 1.85; margin: 0; color: #d8e0d1; }
+.stage-detail { display: inline-block; color: var(--accent); border-bottom: 1px solid var(--accent); font-size: 16px; font-weight: 600; padding-bottom: .35rem; }
+.stage-bottom { display: flex; align-items: end; justify-content: space-between; gap: 2rem; }
+.stage-options { display: flex; gap: 1.8rem; border-bottom: 1px solid #7c8b73; }
+.stage-options button { padding: .8rem 0; border-bottom: 3px solid transparent; margin-bottom: -2px; font-size: 15px; color: #c5cebf; }
+.stage-options button[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); font-weight: 700; }
+.stage-bottom > a { font-size: 13px; color: #d8e0d1; padding-bottom: 1rem; }
+.project-stage[data-current="comma"] .stage-media { background: #173525; }
+.stage-media img[data-project="comma"] { object-fit: contain; object-position: 85% center; width: 65%; margin-left: auto; }
+.project-stage[data-current="unity-shooter"] .stage-media { background: #010232; }
+.stage-media img[data-project="unity-shooter"] { object-position: 80% center; }
+.work-section { padding-top: 34px; padding-bottom: 72px; }
+.work-section .section-top { margin-bottom: 20px; }
+.work-section .section-heading { margin-bottom: 36px; align-items: baseline; }
+.work-section .section-heading h2, .skills-section .section-heading h2 { font-size: 36px; line-height: 1.4; }
+.work-section .section-heading h2 span { color: var(--accent); }
+.work-section .additional-projects { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 48px 32px; }
+.work-section .additional-project { background: transparent; border: 0; border-radius: 0; padding: 0; box-shadow: none; }
+.work-section .additional-project.with-preview { display: block; overflow: visible; }
+.work-section .project-preview { display: block; padding: 0; min-height: 0; aspect-ratio: 16 / 10; background: #0c140f; border: 0; }
+.work-section .project-preview > span { display: none; }
+.work-section .project-preview img { width: 100%; height: 100%; object-fit: cover; object-position: center; margin: 0; }
+.work-section .project-preview.comma-preview { background: #2ebb79; }
+.work-section .project-preview.comma-preview img { object-fit: contain; padding: 20px; }
+.work-section .additional-project-body { padding: 22px 0 0; }
+.work-section .additional-project-body h3 { font-size: 27px; margin: 10px 0 12px; }
+.work-section .additional-project-body p { font-size: 14px; line-height: 1.9; margin-bottom: 16px; }
+.work-section .additional-project-body b { border: 0; margin-top: 18px; padding: 0; font-size: 13px; }
+.work-section .tags span { background: transparent; border: 0; padding: 0; margin-right: 12px; color: #99aa8e; font-size: 11px; }
+.work-section .with-preview:hover .project-preview img { transform: none; }
+.skills-section { padding-top: 64px; }
+.skills-section .section-top { border-top: 1px solid var(--line); }
+.about-section { background: transparent; border-top: 1px solid var(--line); }
+.contact-strip { background: transparent; border-top: 1px solid var(--line); }
+footer { max-width: 1126px; margin-inline: auto; }
+@media(max-width:800px) {
+ .site-header { padding-inline: 20px; }
+ .hero.project-stage { min-height: 650px; min-height: max(620px, calc(100svh - 150px)); padding: 60px 20px 24px; }
+ .stage-copy { padding-bottom: 48px; }
+ .stage-intro { font-size: 14px; margin-bottom: 24px; }
+ .hero.project-stage h1 { font-size: clamp(32px,8.3vw,44px); }
+ .stage-media img { object-position: 58% center; }
+ .project-stage::after { background: linear-gradient(90deg,rgba(8,17,12,.82),rgba(8,17,12,.45)),linear-gradient(0deg,#101714 0%,transparent 45%); }
+ .stage-project { min-height: 100px; }
+ .stage-project p { font-size: 13px; }
+ .stage-bottom { align-items: start; flex-direction: column; gap: 1rem; }
+ .stage-options { width: 100%; gap: 0; justify-content: space-between; }
+ .stage-options button { font-size: 14px; }
+ .stage-bottom > a { padding: 0; font-size: 12px; }
+ .work-section .section-heading { flex-wrap: wrap; gap: 1rem; }
+ .work-section .section-heading h2, .skills-section .section-heading h2 { font-size: 30px; }
+ .work-section .additional-projects { grid-template-columns: minmax(0,1fr); gap: 36px; }
+ .work-section .additional-project-body h3 { font-size: 24px; }
+ .stage-media img[data-project="comma"] { width: 100%; object-position: center; }
+ footer { margin-inline: 20px; }
+}
+
+/* Sliding selection line and sequential scene fade. */
+.stage-options { position: relative; }
+.stage-options button { border-bottom-color: transparent; transition: color 240ms ease; }
+.stage-options button[aria-pressed="true"] { border-bottom-color: transparent; }
+.stage-selection-line { position: absolute; left: 0; bottom: -2px; height: 3px; width: 0; background: var(--accent); pointer-events: none; transition: transform 320ms cubic-bezier(.22,.61,.36,1), width 320ms ease; }
+.stage-media { transition: none; }
+.stage-media img { position: absolute; top: 0; right: 0; }
+@media(prefers-reduced-motion: reduce) {
+ .stage-options button, .stage-selection-line, .stage-media { transition: none; }
 }
